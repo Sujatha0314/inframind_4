@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Home - Brand</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body id="page-top" style="background: #eef7ff;">
+    <nav class="navbar navbar-light navbar-expand-lg fixed-top text-uppercase" id="mainNav" style="height: 60px;background-color:#242B2E !important;">
+        
+        <div class="container"><a class="navbar-brand js-scroll-trigger" href="#page-top" style="font-size: 24px;">
+            <img src="./assets/img/logo.png" style="height: 40px;width: 30px;margin-right: 20px;">
+            Inspire</a><button data-toggle="collapse" data-target="#navbarResponsive" class="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
+            <!-- <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="nav navbar-nav ml-auto">
+                    
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about" style="font-size: 14px;">About</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contact" style="font-size: 14px;">Contact</a></li>
+                </ul>
+            </div> -->
+        </div>
+    </nav>
+    <div style="margin-top: 100px;padding: 30px;">
+        <h3 style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;margin-bottom: 20px;">Personal Details</h3>
+        <div class="shadow-sm" style="padding: 25px;background: #ffffff;border-radius: 5px;">
+            <div class="row" style="margin-top: 0px;">
+                <div class="col">
+                    <div>
+                        <p style="font-weight: bold;font-size: 18px;margin-bottom: 5px;">Name</p>
+                        <p style="font-weight: normal;font-size: 16px;margin-bottom: 16px;" id="name"></p>
+
+                        <p style="font-weight: bold;font-size: 18px;margin-bottom: 5px;">Blood Group</p>
+                        <p style="font-weight: normal;font-size: 16px;margin-bottom: 16px;" id="blood"></p>
+
+                        <p style="font-weight: bold;font-size: 18px;margin-bottom: 5px;">Date of Birth</p>
+                        <p style="font-weight: normal;font-size: 16px;margin-bottom: 16px;" id="dob"></p>
+                        <p style="font-weight: bold;font-size: 18px;margin-bottom: 7px;">Health Details</p>
+                        <div class="d-xl-flex justify-content-xl-start">
+                            <p class="text-left shadow-sm" style="font-weight: normal;font-size: 16px;margin-bottom: 0px;padding: 1px;padding-right: 12px;padding-left: 12px;background: rgba(155,255,120,0.48);color: rgb(49,153,0);border-width: 1px;border-style: solid;border-radius: 2px;margin-left: 5px;margin-right: 5px;">Healthy</p>
+                            <p class="text-left shadow-sm" style="font-weight: normal;font-size: 16px;margin-bottom: 0px;padding: 5px;padding-right: 12px;padding-left: 12px;background: rgba(220,53,69,0.27);color: var(--danger);border-width: 1px;border-style: solid;border-radius: 2px;margin-left: 5px;margin-right: 5px;padding-top: 1px;">Un healthy</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div>
+                        <p style="font-weight: bold;font-size: 18px;margin-bottom: 5px;">Age</p>
+                        <p style="font-weight: normal;font-size: 16px;margin-bottom: 16px;" id="age">42</p>
+
+                        <p style="font-weight: bold;font-size: 18px;margin-bottom: 5px;">Email Adress</p>
+                        <p style="font-weight: normal;font-size: 16px;margin-bottom: 16px;" id="email"></p>
+
+                        <p style="font-weight: bold;font-size: 18px;margin-bottom: 5px;">Height</p>
+                        <p style="font-weight: normal;font-size: 16px;margin-bottom: 16px;" id="height"></p>
+
+                        <p style="font-weight: bold;font-size: 18px;margin-bottom: 5px;">Weight</p>
+                        <p style="font-weight: normal;font-size: 16px;margin-bottom: 16px;" id="weight"></p>
+                    </div>
+                </div>
+            </div>
+            <p style="font-weight: bold;font-size: 18px;margin-bottom: 15px;margin-top: 20px;">Stats</p>
+            <div class="table-responsive table-bordered" style="border-width: 4px;border-style: none;">
+                <table class="table table-bordered">
+                    
+                    <thead>
+                        <tr>
+                    
+                            
+                            <th style="background: #2c3e50;color: rgb(255,255,255);">Body Temperature</th>
+                            <th style="background: #2c3e50;color: rgb(255,255,255);">Blood Pressure</th>
+                            <th style="background: #2c3e50;color: rgb(255,255,255);">Respiratory Rate</th>
+                            <th style="background: #2c3e50;color: rgb(255,255,255);">Blood sugar level</th>
+                            <th style="background: #2c3e50;color: rgb(255,255,255);">Pulse</th>
+                            <th style="background: #2c3e50;color: rgb(255,255,255);">Oxygen Saturation Level</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table">
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="d-lg-none scroll-to-top position-fixed rounded"><a class="d-block js-scroll-trigger text-center text-white rounded" href="#page-top"><i class="fa fa-chevron-up"></i></a></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <script src="assets/js/script.min.js"></script>
+    <script>
+        $(function() {
+        $.ajax({
+
+            url: '/userdata',
+            type: 'POST',
+        }).done(function(req){
+            console.log(req);
+            
+            document.getElementById('tablediv').style.display="flex";
+            document.getElementById('tbody').style.display="flex";
+
+            var table = document.getElementById("thd");
+            table.innerHTML=""
+            var tr = document.createElement('tr');
+                
+            for(var j=0;j<json.length;j++){
+                    var td1 = document.createElement('th');
+                    var text1 = document.createTextNode(json[j])
+                    
+                        td1.className="table-header"
+                    
+                    td1.appendChild(text1)
+                    tr.appendChild(td1)
+            tr.style.backgroundColor="#f8f9fc"
+            table.appendChild(tr)
+            }
+
+            var table = document.getElementById("tby");
+            table.innerHTML=""
+            var tr=[]
+            
+
+                document.getElementById("name").textContent=  req.Employee.Name
+                document.getElementById("blood").textContent= req.Employee.BloodGroupd
+                document.getElementById("age").textContent= req.Employee.Age
+                document.getElementById("email").textContent= req.Employee.Email
+                document.getElementById("height").textContent= req.Employee.Height
+                document.getElementById("weight").textContent= req.Employee.weight
+               
+                
+            for(var i=0;i<=req.Employee.length;i++){
+            
+            
+            tr[i] = document.createElement('tr');
+            tr[i].id=i+'row'
+            
+                var td1 = document.createElement('td');
+                var text1 = document.createTextNode(req.Employee[i].Name)
+                td1.className="table-data"
+                td1.appendChild(text1)
+                tr[i].appendChild(td1)
+               
+
+                var td1 = document.createElement('td');
+                var text1 = document.createTextNode(req.Employee[i].EmpId)
+                td1.appendChild(text1)
+                tr[i].appendChild(td1)
+                td1.className="table-data"
+
+                var td1 = document.createElement('td');
+                var text1 = document.createTextNode(req.Employee[i].BodyTemperature)
+                td1.appendChild(text1)
+                tr[i].appendChild(td1)
+                td1.className="table-data"
+
+                var td1 = document.createElement('td');
+                var text1 = document.createTextNode(req.Employee[i].BloodPressure)
+                td1.className="table-data"
+                td1.appendChild(text1)
+                tr[i].appendChild(td1)
+
+                var td1 = document.createElement('td');
+                var text1 = document.createTextNode(req.Employee[i].RespiratoryRate)
+                td1.className="table-data"
+                td1.appendChild(text1)
+                tr[i].appendChild(td1)
+
+                var td1 = document.createElement('td');
+                var text1 = document.createTextNode(req.Employee[i].Bloodsugarlevel)
+                td1.className="table-data"
+                td1.appendChild(text1)
+                tr[i].appendChild(td1)
+
+                var td1 = document.createElement('td');
+                var text1 = document.createTextNode(req.Employee[i].OxygenSaturationLevel)
+                td1.className="table-data"
+                td1.appendChild(text1)
+                tr[i].appendChild(td1)
+
+                var td1 = document.createElement('td');
+                var text1 = document.createTextNode(req.Employee[i].HealthStatus)
+                td1.className="table-data"
+                td1.appendChild(text1)
+                tr[i].appendChild(td1)
+
+                var td1 = document.createElement('td');
+                var text1 = document.createTextNode(req.Employee[i].Action)
+                td1.className="table-data"
+                td1.appendChild(text1)
+                tr[i].appendChild(td1)
+                
+
+        table.appendChild(tr[i])
+        
+        }
+    
+            
+        }).fail(function(req){
+            console.log("mission failed");
+        })
+    });
+    </script>
+</body>
+
+</html>

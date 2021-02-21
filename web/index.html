@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+    />
+    <title>Home - Brand</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Montserrat:400,700"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+
+  <body id="page-top">
+    <nav
+      class="navbar navbar-light navbar-expand-lg fixed-top text-uppercase"
+      id="mainNav"
+      style="height: 60px; background-color: #242b2e !important"
+    >
+      <div class="container">
+        <a
+          class="navbar-brand js-scroll-trigger"
+          href="#page-top"
+          style="font-size: 24px"
+        >
+          StayFit</a
+        ><button
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          class="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <i class="fa fa-bars"></i>
+        </button>
+        <!-- <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="nav navbar-nav ml-auto">
+                    
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about" style="font-size: 14px;">About</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contact" style="font-size: 14px;">Contact</a></li>
+                </ul>
+            </div> -->
+      </div>
+    </nav>
+    <div style="margin-top: 100px; padding: 30px">
+      <div
+        class="table-responsive table-bordered"
+        style="border-width: 4px; border-style: none"
+      >
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th style="background: #2c3e50; color: rgb(255, 255, 255)">
+                Name
+              </th>
+              <th style="background: #2c3e50; color: rgb(255, 255, 255)">
+                Emp Id
+              </th>
+              <th style="background: #2c3e50; color: rgb(255, 255, 255)">
+                Body Temperature
+              </th>
+              <th style="background: #2c3e50; color: rgb(255, 255, 255)">
+                Blood Pressure
+              </th>
+              <th style="background: #2c3e50; color: rgb(255, 255, 255)">
+                Respiratory Rate
+              </th>
+              <th style="background: #2c3e50; color: rgb(255, 255, 255)">
+                Blood sugar level
+              </th>
+              <th style="background: #2c3e50; color: rgb(255, 255, 255)">
+                Pulse
+              </th>
+              <th style="background: #2c3e50; color: rgb(255, 255, 255)">
+                Oxygen Saturation Level
+              </th>
+              <th style="background: #2c3e50; color: rgb(255, 255, 255)">
+                Health Status
+              </th>
+
+              <th
+                class="text-center"
+                style="background: #2c3e50; color: rgb(255, 255, 255)"
+              >
+                Action
+              </th>
+            </tr>
+          </thead>
+          <tbody id="tbody"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <script src="assets/js/script.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script>
+      $(function () {
+        $.ajax({
+          url: "/healthrecord",
+          type: "POST",
+        })
+          .done(function (req) {
+            console.log(req);
+
+            var table = document.getElementById("table");
+            table.innerHTML = "";
+            var tr = [];
+            if (req.Stacks.length === 0) {
+              console.log("empty");
+              tr[0] = document.createElement("tr");
+              var td1 = document.createElement("td");
+              var text1 = document.createTextNode("No Employee data present");
+              td1.appendChild(text1);
+              tr[0].appendChild(td1);
+              td1.className = "table-no-data";
+              table.appendChild(tr[0]);
+            } else {
+              for (var i = 0; i <= req.Employee.length; i++) {
+                tr[i] = document.createElement("tr");
+                tr[i].id = i + "row";
+
+                var td1 = document.createElement("td");
+                var text1 = document.createTextNode(req.Employee[i].Name);
+                td1.className = "table-data";
+                td1.appendChild(text1);
+                tr[i].appendChild(td1);
+
+                var td1 = document.createElement("td");
+                var text1 = document.createTextNode(req.Employee[i].EmpId);
+                td1.appendChild(text1);
+                tr[i].appendChild(td1);
+                td1.className = "table-data";
+
+                var td1 = document.createElement("td");
+                var text1 = document.createTextNode(
+                  req.Employee[i].BodyTemperature
+                );
+                td1.appendChild(text1);
+                tr[i].appendChild(td1);
+                td1.className = "table-data";
+
+                var td1 = document.createElement("td");
+                var text1 = document.createTextNode(
+                  req.Employee[i].BloodPressure
+                );
+                td1.className = "table-data";
+                td1.appendChild(text1);
+                tr[i].appendChild(td1);
+
+                var td1 = document.createElement("td");
+                var text1 = document.createTextNode(
+                  req.Employee[i].RespiratoryRate
+                );
+                td1.className = "table-data";
+                td1.appendChild(text1);
+                tr[i].appendChild(td1);
+
+                var td1 = document.createElement("td");
+                var text1 = document.createTextNode(
+                  req.Employee[i].Bloodsugarlevel
+                );
+                td1.className = "table-data";
+                td1.appendChild(text1);
+                tr[i].appendChild(td1);
+
+                var td1 = document.createElement("td");
+                var text1 = document.createTextNode(
+                  req.Employee[i].OxygenSaturationLevel
+                );
+                td1.className = "table-data";
+                td1.appendChild(text1);
+                tr[i].appendChild(td1);
+
+                var td1 = document.createElement("td");
+                var text1 = document.createTextNode(
+                  req.Employee[i].HealthStatus
+                );
+                td1.className = "table-data";
+                td1.appendChild(text1);
+                tr[i].appendChild(td1);
+
+                var td1 = document.createElement("td");
+                var text1 = document.createTextNode(req.Employee[i].Action);
+                td1.className = "table-data";
+                td1.appendChild(text1);
+                tr[i].appendChild(td1);
+
+                table.appendChild(tr[i]);
+              }
+            }
+          })
+          .fail(function (req) {
+            console.log("mission failed");
+          });
+      });
+    </script>
+  </body>
+</html>
